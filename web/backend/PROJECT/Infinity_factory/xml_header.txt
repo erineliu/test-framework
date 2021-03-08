@@ -1,0 +1,15 @@
+<TestConfigRoot>
+
+    <EnvVar>
+        <Unit1>
+            <switchIP>GA1</switchIP>
+            <switchIP2>GA123</switchIP2>
+        </Unit1>
+        <Unit2>
+            <switchIP>GA2</switchIP>
+            <switchIP2>GA123dfdf</switchIP2>
+        </Unit2>
+    </EnvVar>
+
+    <TestPlan>
+

@@ -1,0 +1,127 @@
+<TestConfigRoot>
+
+    <EnvVar>
+        <Unit1>
+            <switchIP>GA1</switchIP>
+            <switchIP2>GA123</switchIP2>
+        </Unit1>
+        <Unit2>
+            <switchIP>GA2</switchIP>
+            <switchIP2>GA123dfdf</switchIP2>
+        </Unit2>
+    </EnvVar>
+
+    <TestPlan>
+
+        <TestStage log_name="PRI" stage="TP">
+
+            <TestCase name="Write_Resume">
+                <SSHCmd>./write_resume.sh</SSHCmd>
+                <Timeout>5</Timeout>
+                <ErrCode>erorerere</ErrCode>
+            </TestCase>
+
+            <TestCase name="Dump_Resume_SN">
+                <SSHCmd>./dump_resume_sn.sh</SSHCmd>
+                <Timeout>5</Timeout>
+                <ErrCode>erorerere</ErrCode>
+            </TestCase>
+
+            <TestCase name="CPU_STATUS">
+                <SSHCmd>./chkCPU.sh</SSHCmd>
+                <Timeout>5</Timeout>
+                <ErrCode>erorerere</ErrCode>
+            </TestCase>
+
+            <TestCase name="MEM_STATUS">
+                <SSHCmd>./chkMEM.sh</SSHCmd>
+                <Timeout>5</Timeout>
+                <ErrCode>erorerere</ErrCode>
+            </TestCase>
+
+            <TestCase name="HBA_STATUS">
+                <SSHCmd>./chkPCIe.sh</SSHCmd>
+                <Timeout>5</Timeout>
+                <ErrCode>erorerere</ErrCode>
+            </TestCase>
+
+            <TestCase name="HDD_SSD_STATUS">
+                <SSHCmd>./chkHDD_SSD.sh</SSHCmd>
+                <Timeout>5</Timeout>
+                <ErrCode>erorerere</ErrCode>
+            </TestCase>
+
+            <TestCase name="Storage_STATUS">
+                <SSHCmd>./chk8074.sh</SSHCmd>
+                <Timeout>5</Timeout>
+                <ErrCode>erorerere</ErrCode>
+            </TestCase>
+
+
+            <TestCase name="M.2_STATUS">
+                <SSHCmd>./chkfdisk.sh</SSHCmd>
+                <Timeout>5</Timeout>
+                <ErrCode>erorerere</ErrCode>
+            </TestCase>
+
+
+            <TestCase name="USB_STATUS">
+                <SSHCmd>./chkUSB.sh</SSHCmd>
+                <Timeout>5</Timeout>
+                <ErrCode>erorerere</ErrCode>
+            </TestCase>
+
+            <TestCase name="USB_Speed">
+                <SSHCmd>./chkusbspeed1.sh</SSHCmd>
+                <Timeout>5</Timeout>
+                <ErrCode>erorerere</ErrCode>
+            </TestCase>
+
+            <TestCase name="CMOS_STATUS">
+                <SSHCmd>./chkCMOSVol.sh</SSHCmd>
+                <Timeout>5</Timeout>
+                <ErrCode>erorerere</ErrCode>
+            </TestCase>
+
+            <TestCase name="BMC_Version">
+                <SSHCmd>./chkBMCVer.sh</SSHCmd>
+                <Timeout>5</Timeout>
+                <ErrCode>erorerere</ErrCode>
+            </TestCase>
+
+            <TestCase name="BIOS_Version">
+                <SSHCmd>./chkBIOSVer.sh</SSHCmd>
+                <Timeout>5</Timeout>
+                <ErrCode>erorerere</ErrCode>
+            </TestCase>
+
+            <TestCase name="CMD_Version">
+                <SSHCmd>./chkCMDVer.sh</SSHCmd>
+                <Timeout>5</Timeout>
+                <ErrCode>erorerere</ErrCode>
+            </TestCase>
+
+            <TestCase name="Fan_Status">
+                <SSHCmd>./chkFANspeed.sh</SSHCmd>
+                <Timeout>5</Timeout>
+                <ErrCode>erorerere</ErrCode>
+	    </TestCase>
+
+            <TestCase name="CPUX PSX BBU DIMM Temp Test">
+                <SSHCmd>./chkTemp.sh</SSHCmd>
+                <Timeout>5</Timeout>
+                <ErrCode>erorerere</ErrCode>
+            </TestCase>
+
+            <TestCase name="TPM Test">
+                <SSHCmd>./chkTPM.sh</SSHCmd>
+                <Timeout>5</Timeout>
+                <ErrCode>erorerere</ErrCode>
+            </TestCase>
+
+
+        </TestStage>
+
+    </TestPlan>
+
+</TestConfigRoot>

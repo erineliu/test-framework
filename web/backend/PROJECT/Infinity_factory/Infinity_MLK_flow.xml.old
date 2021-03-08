@@ -1,0 +1,74 @@
+<TestConfigRoot>
+
+    <EnvVar>
+        <Unit1>
+            <switchIP>GA1</switchIP>
+            <switchIP2>GA123</switchIP2>
+        </Unit1>
+        <Unit2>
+            <switchIP>GA2</switchIP>
+            <switchIP2>GA123dfdf</switchIP2>
+        </Unit2>
+    </EnvVar>
+
+    <TestPlan>
+
+        <TestStage log_name="PRI" stage="TN">
+
+            <TestCase name="CHK_IB_Dual_Port">
+                <Cmd>dmidecode -t 2</Cmd>
+                <Timeout>5</Timeout>
+                <ErrCode>erorerere</ErrCode>
+            </TestCase>
+
+            <TestCase name="ECHO TEST">
+                <Cmd>echo "123"</Cmd>
+                <Timeout>5</Timeout>
+                <ErrCode>erorerere</ErrCode>
+            </TestCase>
+
+
+            <TestCase name="test">
+                <SSHCmd>lspci -s 10:00.0 -vvv|grep -i \"Speed 8GT/s, Width x8\"</SSHCmd>
+                <Timeout>12</Timeout>
+                <ErrCode>erorerere</ErrCode>
+            </TestCase>
+
+            <TestCase name="IB_Dua">
+                <SSHCmd>echo \"$switchIP dfd\" $switchIP2 $ip</SSHCmd>
+                <Timeout>12</Timeout>
+                <ErrCode>erorerere</ErrCode>
+            </TestCase>
+
+            <TestCase name="IB_Dual_Port_LINK_TYPE_UPDATE">
+                <SSHCmd>bash /home/ernie/test1</SSHCmd>
+                <Timeout>20</Timeout>
+                <ErrCode>erorerere</ErrCode>
+            </TestCase>
+
+            <TestCase name="CHK_IB_Dual_Port">
+                <Cmd>ping 127.0.0.1 -c 10</Cmd>
+                <Timeout>5</Timeout>
+                <ErrCode>erorerere</ErrCode>
+            </TestCase>
+
+        </TestStage>
+
+        <TestStage log_name="PRI" stage="TO">
+
+            <TestCase name="IB_Dual_Port_LINK_TYPE_UPDATE">
+                <Command>bash /root/Naomi_Test_Launcher/NaomiTestCases/IB_PORT/UP_LINK_TYPE.sh</Command>
+                <Timeout>5</Timeout>
+                <ErrCode>erorerere</ErrCode>
+            </TestCase>
+
+            <TestCase name="CHK_IB_Dual_Port">
+                <Command>bash /root/Naomi_Test_Launcher/NaomiTestCases/IB_PORT/CHK_IB_DGX.sh</Command>
+                <Timeout>5</Timeout>
+                <ErrCode>erorerere</ErrCode>
+            </TestCase>
+        </TestStage>
+
+    </TestPlan>
+
+</TestConfigRoot>

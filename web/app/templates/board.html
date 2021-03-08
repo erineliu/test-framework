@@ -1,0 +1,47 @@
+{% extends "index.html" %}
+
+{% block title %} ssh cmd page {% endblock %}
+
+
+{% block styles %}
+
+{{super()}}
+
+{% endblock %}
+
+
+{% block scripts %}
+
+{{super()}}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">SN</th>
+                <th scope="col">Status</th>
+                <th scope="col">Mesg</th>
+                <th scope="col">Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td>12345678</td>
+                <td>PASS</td>
+                <td>Otto</td>
+                <td>2020/12/01</td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
+
+
+{% endblock %}

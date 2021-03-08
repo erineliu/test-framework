@@ -1,0 +1,154 @@
+<TestConfigRoot>
+
+    <EnvVar>
+        <Unit1>
+            <switchIP>GA1</switchIP>
+            <switchIP2>GA123</switchIP2>
+        </Unit1>
+        <Unit2>
+            <switchIP>GA2</switchIP>
+            <switchIP2>GA123dfdf</switchIP2>
+        </Unit2>
+    </EnvVar>
+
+    <TestPlan>
+
+        <TestStage log_name="PRI" stage="TN">
+
+            <TestCase name="CPU_STATUS">
+                <SSHCmd>./chkCPU.sh</SSHCmd>
+                <Timeout>5</Timeout>
+                <ErrCode>erorerere</ErrCode>
+            </TestCase>
+
+            <TestCase name="FAN_STATUS">
+                <SSHCmd>ipmitool raw 0x04 0x2d 0x3c</SSHCmd>
+                <Timeout>5</Timeout>
+                <ErrCode>erorerere</ErrCode>
+            </TestCase>
+
+            <TestCase name="A">
+                <SSHCmd>ipmitool raw 0x04 0x2d 0x9C</SSHCmd>
+                <Timeout>5</Timeout>
+                <ErrCode>erorerere</ErrCode>
+            </TestCase>
+
+            <TestCase name="B">
+                <SSHCmd>ipmitool raw 0x04 0x2d 0x94</SSHCmd>
+                <Timeout>5</Timeout>
+                <ErrCode>erorerere</ErrCode>
+            </TestCase>
+
+            <TestCase name="C">
+                <SSHCmd>ipmitool raw 0x04 0x2d 0xB0</SSHCmd>
+                <Timeout>5</Timeout>
+                <ErrCode>erorerere</ErrCode>
+            </TestCase>
+
+            <TestCase name="D">
+                <SSHCmd>ipmitool raw 0x04 0x2d 0x30</SSHCmd>
+                <Timeout>5</Timeout>
+                <ErrCode>erorerere</ErrCode>
+            </TestCase>
+
+            <TestCase name="E">
+                <SSHCmd>ipmitool raw 0x04 0x2d 0x31</SSHCmd>
+                <Timeout>5</Timeout>
+                <ErrCode>erorerere</ErrCode>
+            </TestCase>
+
+            <TestCase name="F">
+                <SSHCmd>ipmitool raw 0x04 0x2d 0x32</SSHCmd>
+                <Timeout>5</Timeout>
+                <ErrCode>erorerere</ErrCode>
+            </TestCase>
+
+            <TestCase name="G">
+                <SSHCmd>ipmitool raw 0x04 0x2d 0x33</SSHCmd>
+                <Timeout>5</Timeout>
+                <ErrCode>erorerere</ErrCode>
+            </TestCase>
+
+            <TestCase name="H">
+                <SSHCmd>ipmitool raw 0x04 0x2d 0x34</SSHCmd>
+                <Timeout>5</Timeout>
+                <ErrCode>erorerere</ErrCode>
+            </TestCase>
+
+            <TestCase name="I">
+                <SSHCmd>ipmitool raw 0x04 0x2d 0x35</SSHCmd>
+                <Timeout>5</Timeout>
+                <ErrCode>erorerere</ErrCode>
+            </TestCase>
+
+            <TestCase name="J">
+                <Cmd>cat /proc/cpuinfo</Cmd>
+                <Timeout>5</Timeout>
+                <ErrCode>erorerere</ErrCode>
+            </TestCase>
+
+            <TestCase name="K">
+                <Cmd>cat /proc/meminfo</Cmd>
+                <Timeout>5</Timeout>
+                <ErrCode>erorerere</ErrCode>
+            </TestCase>
+
+            <TestCase name="L">
+                <Cmd>ls /dev/ttyUSB*</Cmd>
+                <Timeout>5</Timeout>
+                <ErrCode>erorerere</ErrCode>
+            </TestCase>
+
+            <TestCase name="M">
+                <Cmd>ipmitool 30 34 0 10 27 00 00</Cmd>
+                <Timeout>5</Timeout>
+                <ErrCode>erorerere</ErrCode>
+            </TestCase>
+
+            <TestCase name="N">
+                <Cmd>ipmitool 0x8 0x01 0 10</Cmd>
+                <Timeout>5</Timeout>
+                <ErrCode>erorerere</ErrCode>
+            </TestCase>
+
+            <TestCase name="O">
+                <Cmd>dmidecode -s bios-version</Cmd>
+                <Timeout>5</Timeout>
+                <ErrCode>erorerere</ErrCode>
+            </TestCase>
+
+            <TestCase name="P">
+                <SSHCmd>ipmitool raw 0x06 0x01</SSHCmd>
+                <Timeout>5</Timeout>
+                <ErrCode>erorerere</ErrCode>
+            </TestCase>
+
+            <TestCase name="Q">
+                <Cmd>lspci -s 48:02.0 -vvv | grep -i width</Cmd>
+                <Timeout>5</Timeout>
+                <ErrCode>erorerere</ErrCode>
+            </TestCase>
+
+            <TestCase name="R">
+                <Cmd>lspci -s 48:00.0 -vvv | grep -i width</Cmd>
+                <Timeout>5</Timeout>
+                <ErrCode>erorerere</ErrCode>
+            </TestCase>
+
+            <TestCase name="S">
+                <Cmd>lspci -s 10:00.0 -vvv | grep -i width</Cmd>
+                <Timeout>5</Timeout>
+                <ErrCode>erorerere</ErrCode>
+            </TestCase>
+
+            <TestCase name="T">
+                <SSHCmd>ipmitool raw 0x4 0x2d 0xc8</SSHCmd>
+                <Timeout>5</Timeout>
+                <ErrCode>erorerere</ErrCode>
+            </TestCase>
+
+        </TestStage>
+
+    </TestPlan>
+
+</TestConfigRoot>

@@ -1,0 +1,54 @@
+gunicorn --bind=0.0.0.0:60001 --reload  -k eventlet  wsgi:app
+gunicorn --bind=0.0.0.0:60001 --reload  -k flask_sockets.worker  wsgi:app
+waitress-serve --listen=0.0.0.0:60001 --threads=10 wsgi:app
+
+
+
+#==========================================================
+old MYSQL password:!J33N?2jl7iY
+MYSQL password:zxcZXC123!@#
+
+
+grant privileges on mydatabase.test_table to 'ernie'@'localhost' identified by '1'
+
+
+## quary command ##
+use mysql; #使用mysql資料庫
+select *from user; -- 選擇user資料表
+
+
+## show table data ##
+select *from test_table;
+
+
+## show distintc column "Country" from table "Customers" ##
+SELECT DISTINCT Country FROM Customers;
+
+
+## change database's character to utf8 for chinese ##
+alter database mydatabase
+character set utf8;
+
+
+#==================================================#
+celery  -A manage.celery worker -E --loglevel=info 
+docker run --name flower -p 5555:5555 mher/flower:latest flower --broker=redis://localhost:6379
+
+
+#==================================================#
+docker build -t myfirstimage . --no-cache
+docker run -it  --name test1 --network="host" -p 60001:60001  myfirstimage  bash
+
+
+docker run -it  --name test1 -v /PROJECT/flask/bootstrap4_test2_optimal:/WebTester -p 60001:60001  myfirstimage  bash  
+docker run --name celery -v /PROJECT/flask/bootstrap4_test2_optimal:/WebTester myfirstimage celery -A manage.celery worker -E --loglevel=info  
+
+#===================================================#
+## install docker machine ##
+
+curl -L https://github.com/docker/machine/releases/download/v0.16.2/docker-machine-`uname -s`-`uname -m` >/tmp/docker-machine &&
+    chmod +x /tmp/docker-machine &&
+    sudo cp /tmp/docker-machine /usr/local/bin/docker-machine
+
+
+#===================================================# 

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+{% extends "index.html" %}
+
+{% block title %} ssh cmd page {% endblock %}
+
+{% block scripts %}
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.6/socket.io.min.js"></script>
+  <script src="static/js/application.js"></script>
+  {{super()}}
+{% endblock %}
+
+{% block content %}
+<div class="container">
+  <h2>SSH TEST</h2>
+  <form id="emit" method='post' action='#'>
+    <div class="form-group">
+      <label for="ip">IP:</label>
+      <input type="text" class="form-control" id="ip" placeholder="Enter ip" name="ip">
+    </div>
+    <div class="form-group">
+      <label for="user">User:</label>
+      <input type="text" class="form-control" id="user" placeholder="Enter User" name="user">
+    </div>
+    <div class="form-group">
+      <label for="pwd">Password:</label>
+      <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
+    </div>
+    <div class="form-group">
+      <label for="cmd">Cmd:</label>
+      <input type="text" class="form-control" id="cmd" placeholder="Enter cmd" name="cmd">
+    </div>
+
+    <p><button  id="execute" type="submit" class="btn btn-default">Execute</button></p>
+     
+    <div class="form-group">
+      <label for="output">Output:</label>
+      <textarea class="form-control" rows="25" readonly id="output"></textarea>
+    </div>
+   
+  </form>
+  <div class="alert alert-success">
+    <strong>Success!</strong> This alert box could indicate a successful or positive action.
+  </div>
+</div>
+{% endblock %}
+
+
+
+
+

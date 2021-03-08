@@ -1,0 +1,4 @@
+docker run --name some-redis  -p 6379:6379 -v /PROJECT/redis/data:/data -v /PROJECT/redis/config:/etc/redis/config -d redis redis-server /etc/redis/config/redis.conf
+
+## command ## 
+docker run --name some-redis  -p 6379:6379 -v /PROJECT/redis/data:/data -d redis redis-server /data/redis.conf

@@ -1,0 +1,56 @@
+version: '3.4'
+
+services:
+
+  flask:
+    build: ./web
+    container_name: flask_app
+    volumes:
+      - /PROJECT/flask/bootstrap4_test2_optimal/web:/WebTester
+
+    command: waitress-serve --listen=0.0.0.0:60001 --threads=10 wsgi:app
+
+    depends_on:
+      - redis
+
+    ports:
+      - 60001:60001
+
+
+  celery:
+    build: ./web
+    container_name: celery_app
+    volumes:
+      - /PROJECT/flask/bootstrap4_test2_optimal/web:/WebTester
+
+    command: celery -A manage.celery worker -E --loglevel=info
+
+    depends_on:
+      - redis
+
+
+
+  flower3:
+    image: mher/flower:0.9
+    container_name: docker_flower
+    environment:
+      - CELERY_BROKER_URL=redis://10.35.49.15:6379/1
+      - FLOWER_PORT=5555
+
+    depends_on:
+      - redis
+
+    ports:
+      - 5555:5555
+
+
+  redis:
+    image: redis:latest
+    container_name: docker_redis
+    ports:
+      - 6379:6379
+
+    volumes:
+      - /PROJECT/flask/bootstrap4_test2_optimal/redis/data:/data
+
+    command:  redis-server /data/redis.conf

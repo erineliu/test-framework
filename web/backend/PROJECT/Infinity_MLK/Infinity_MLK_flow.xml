@@ -1,0 +1,59 @@
+<TestConfigRoot>
+
+    <EnvVar>
+        <Unit1>
+            <switchIP>GA1</switchIP>
+            <switchIP2>GA123</switchIP2>
+        </Unit1>
+        <Unit2>
+            <switchIP>GA2</switchIP>
+            <switchIP2>GA123dfdf</switchIP2>
+        </Unit2>
+    </EnvVar>
+
+    <TestPlan>
+
+        <TestStage log_name="PRI" stage="TN">
+
+
+            <TestCase name="CHK_IB_Dual_Port">
+                <MSGCmd>showMessageDlg \'Please check led is light\' /static/image/flower.jpg</MSGCmd>
+                <Timeout>1</Timeout>
+                <ErrCode>erorerere</ErrCode>
+            </TestCase>
+
+
+            <TestCase name="ping host">
+                <Cmd>ping 127.0.0.1 -c 3</Cmd>
+                <Timeout>5</Timeout>
+                <ErrCode>erorerere</ErrCode>
+            </TestCase>
+
+        </TestStage>
+
+        <TestStage log_name="PRI" stage="TO">
+
+            <TestCase name="ping host">
+                <Cmd>ping 127.0.0.1 -c 10</Cmd>
+                <Timeout>5</Timeout>
+                <ErrCode>erorerere</ErrCode>
+            </TestCase>
+
+            <!--
+            <TestCase name="IB_Dual_Port_LINK_TYPE_UPDATE">
+                <Cmd>bash /root/Naomi_Test_Launcher/NaomiTestCases/IB_PORT/UP_LINK_TYPE.sh</Cmd>
+                <Timeout>5</Timeout>
+                <ErrCode>erorerere</ErrCode>
+            </TestCase>
+
+            <TestCase name="CHK_IB_Dual_Port">
+                <Cmd>bash /root/Naomi_Test_Launcher/NaomiTestCases/IB_PORT/CHK_IB_DGX.sh</Cmd>
+                <Timeout>5</Timeout>
+                <ErrCode>erorerere</ErrCode>
+            </TestCase>
+            -->
+        </TestStage>
+
+    </TestPlan>
+
+</TestConfigRoot>

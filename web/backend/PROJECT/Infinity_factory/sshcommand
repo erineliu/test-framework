@@ -1,0 +1,22 @@
+#TetCase,command,timeout,ErrCode,Type
+FAN_STATUS,ipmitool raw 0x04 0x2d 0x3c,5,erorerere,1
+A,ipmitool raw 0x04 0x2d 0x9C,5,erorerere,1
+B,ipmitool raw 0x04 0x2d 0x94,5,erorerere,1
+C,ipmitool raw 0x04 0x2d 0xB0,5,erorerere,1
+D,ipmitool raw 0x04 0x2d 0x30,5,erorerere,1
+E,ipmitool raw 0x04 0x2d 0x31,5,erorerere,1
+F,ipmitool raw 0x04 0x2d 0x32,5,erorerere,1
+G,ipmitool raw 0x04 0x2d 0x33,5,erorerere,1
+H,ipmitool raw 0x04 0x2d 0x34,5,erorerere,1
+I,ipmitool raw 0x04 0x2d 0x35,5,erorerere,1
+J,cat /proc/cpuinfo,5,erorerere,0
+K,cat /proc/meminfo,5,erorerere,0
+L,ls /dev/ttyUSB*,5,erorerere,0
+M,ipmitool 30 34 0 10 27 00 00,5,erorerere,0
+N,ipmitool 0x8 0x01 0 10,5,erorerere,0
+O,dmidecode -s bios-version,5,erorerere,0
+P,ipmitool raw 0x06 0x01,5,erorerere,1
+Q,lspci -s 48:02.0 -vvv | grep -i width,5,erorerere,0
+R,lspci -s 48:00.0 -vvv | grep -i width,5,erorerere,0
+S,lspci -s 10:00.0 -vvv | grep -i width,5,erorerere,0
+T,ipmitool raw 0x4 0x2d 0xc8,5,erorerere,1

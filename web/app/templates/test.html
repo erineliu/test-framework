@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en-US" prefix="og: https://ogp.me/ns#" class="no-js">
+<head>
+<title>Multiple JQuery Dialogs</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css"/>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+</head>
+<body>
+
+
+<script>
+	//style all the dialogue
+	$( function() {
+		$(".dialog_help").dialog({
+			modal: true,
+			autoOpen: false,
+			width: 500,
+			height: 300,
+			dialogClass: 'ui-dialog-osx'
+		});
+	});
+	
+	//opens the appropriate dialog
+	$( function() {
+		$(".opener").click(function () {
+			//takes the ID of appropriate dialogue
+			var id = $(this).data('id');
+		   //open dialogue
+			$(id).dialog("open");
+		});
+	});
+</script>
+
+	<p>This is the first paragraph. <em class='icon-question opener' data-id='#dialog_1' style='cursor: pointer;'> Help 1</em></p>
+	<div class='dialog_help' id='dialog_1' title='Dialog 1 title'>
+		<p>Dialog Help Content One.</p>
+	</div>
+	<p>This is the second paragraph. <em class='icon-question opener' data-id='#dialog_2' style='cursor: pointer;'> Help 2</em></p>
+	<div class='dialog_help' id='dialog_2' title='Dialog 2 Title'>
+		<p>Dialog Help Content Two.</p>
+	</div>
+	<p>This is the third paragraph. <em class='icon-question opener' data-id='#dialog_3' style='cursor: pointer;'> Help 3</em></p>
+	<div class='dialog_help' id='dialog_3' title='Dialog 3 Title'>
+		<p>Dialog Help Content Three.</p>
+	</div>
+
+
+    </body>
+</html>
+  
+

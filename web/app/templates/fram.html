@@ -1,0 +1,42 @@
+{% extends "index.html" %}
+
+{% block title %} ssh cmd page {% endblock %}
+
+
+{% block styles %}
+
+
+{{super()}}
+<link rel="stylesheet" href='static/style.css' />
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+{% endblock %}
+
+
+
+{% block scripts %}
+{{super()}}
+<!--<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>-->
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.6/socket.io.min.js"></script>
+<script src="static/js/application.js"></script>
+<script src="static/js/dl.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+{% endblock %}
+
+{% block content %}
+<!--
+<div id="dialog" title="Basic dialog">
+  <p>This is the default dialog which is useful for displaying information. The dialog window can be moved, resized and closed with the 'x' icon.</p>
+</div
+-->
+<div class="container">
+  <select class="selectpicker" id="ddl_location">
+    <option select="selected">Select Location </option>
+  </select>
+</div>
+
+{% endblock %}
+
+
+
+
+

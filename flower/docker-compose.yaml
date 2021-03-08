@@ -1,0 +1,7 @@
+flower3:
+  image: mher/flower:0.9
+  environment:
+    - CELERY_BROKER_URL=redis://10.35.49.15:6379/1
+    - FLOWER_PORT=5555
+  ports:
+    - 5555:5555
